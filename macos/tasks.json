@@ -21,6 +21,7 @@
                 "-Wall",
                 "-O2",
                 "-Wno-unused-result",
+                "@${fileDirname}/../conan-build/conanbuildinfo.args",
                 "-o",
                 "${fileDirname}/build/${fileBasenameNoExtension}"
             ],
@@ -49,6 +50,7 @@
                 "-Wshadow",
                 "-Wall",
                 "-Wno-unused-result",
+                "@${fileDirname}/conan-build/conanbuildinfo.args",
                 "-o",
                 "${fileDirname}/build/${fileBasenameNoExtension}"
             ],
@@ -75,6 +77,7 @@
                 "-fsanitize=address",
                 "-fno-omit-frame-pointer",
                 "-fsanitize=undefined",
+                "@${fileDirname}/../conan-build/conanbuildinfo.args",
                 "-O",
                 "-o",
                 "${fileDirname}/build/${fileBasenameNoExtension}"
@@ -96,7 +99,10 @@
             "options": {
                 "cwd": "${fileDirname}/build"
             },
-            "problemMatcher": []
+            "problemMatcher": [],
+            "dependsOn": [
+                "Build"
+            ]
         },
         {
             "type": "shell",
