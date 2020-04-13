@@ -1,0 +1,36 @@
+{	
+	"Algorithms main": {
+	 	"prefix": "algo",
+	 	"body": [
+			 "#include <bits/stdc++.h>",
+			 "",
+			"using namespace std;",
+ 			"",
+			"typedef long long ll;",
+			"typedef vector<long long> vi;",
+			"typedef pair<long long, long long> ii;",
+			"typedef vector<pair<long long, long long>> vii;",
+			"typedef stringstream ss;",
+			"const ll mil = numeric_limits<long long>::min();",
+			"const ll mal = numeric_limits<long long>::max();",
+			 "",
+			"#define R3(i, a, b) for(long long i=(a); i<(b); ++i)",
+			"#define R2(i, b) for(long long i=0; i<(b); ++i)",
+			"#define R1(b) for(long long i=0; i<(b); ++i)",
+			"#define RR(i, a, b) for(long long i=a; i>b; --i)",
+			"#define PB(x) push_back(x)",
+			"#define MP(x, y) make_pair(x, y)",
+			 "",
+			 "// build: ctrl + f9",
+			 "",
+			 "// run: shift + f10",
+			 "// debug: shift + f9",
+			 "// sanitize: shift + f11",
+			 "",
+			"int main(int argc, char **argv) {",
+			"\t$0",			
+	 		"}"
+	 	],
+	 	"description": "Algorithms template"
+	 }
+}
