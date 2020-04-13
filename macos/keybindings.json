@@ -1,0 +1,73 @@
+[{
+
+    "key": "cmd+f9",
+    
+    "command": "workbench.action.tasks.build",
+    "intellij": "Make project (compile modifed and dependent)"
+},
+{
+    "key": "shift+f10",
+    
+    "command": "workbench.action.tasks.runTask",
+    "args": "Run"        
+},
+{
+    "key": "shift+f11",
+    
+    "command": "workbench.action.tasks.runTask",
+    "args": "Sanitize"        
+},
+{
+    "key": "shift+f9",
+    
+    "command": "workbench.action.debug.start",
+    "when": "!inDebugMode && !terminalFocus",
+    "intellij": "Debug"
+},
+{
+    "key": "shift+f9",
+    
+    "command": "workbench.action.debug.start",
+    "when": "!inDebugMode && !terminalFocus",
+    "intellij": "Debug"
+},
+{
+    "key": "f8",
+    
+    "command": "workbench.action.debug.stepOver",
+    "when": "inDebugMode",
+    "intellij": "Step over"
+},
+{
+    "key": "f7",
+    
+    "command": "workbench.action.debug.stepInto",
+    "when": "inDebugMode",
+    "intellij": "Step into"
+},
+{
+    "key": "shift+f8",
+    
+    "command": "workbench.action.debug.stepOut",
+    "when": "inDebugMode",
+    "intellij": "Step out"
+},
+{
+    "key": "f9",
+    
+    "command": "workbench.action.debug.continue",
+    "when": "inDebugMode",
+    "intellij": "Resume program"
+},
+{
+    "key": "cmd+f8",
+    
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "editorTextFocus",
+    "intellij": "Toggle breakpoint"
+},
+{ "key": "cmd+f2",
+    "command": "workbench.action.debug.stop",
+    "intellij": "Stop debug"
+  }
+]
