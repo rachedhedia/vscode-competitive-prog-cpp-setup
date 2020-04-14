@@ -3,6 +3,15 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "Make output dir",
+            "command": "mkdir -p ./build",            
+            "options": {
+                "cwd": "${fileDirname}"
+            }
+        },
+        {
+            
+            "type": "shell",
             "label": "Build",
             "command": "/usr/bin/g++",
             "args": [
@@ -13,8 +22,9 @@
                 "-Wall",
                 "-O2",
                 "-Wno-unused-result",
+                "@${fileDirname}/../conan-build/conanbuildinfo.args",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/build/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "/usr/bin"
@@ -25,7 +35,10 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "dependsOn" :[
+                "Make output dir"
+            ]
         },
         {
             "type": "shell",
@@ -38,14 +51,18 @@
                 "-Wshadow",
                 "-Wall",
                 "-Wno-unused-result",
+                "@${fileDirname}/../conan-build/conanbuildinfo.args",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/build/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "/usr/bin"
             },
             "problemMatcher": [
                 "$gcc"
+            ],
+            "dependsOn" :[
+                "Make output dir"
             ]            
         },
         {
@@ -61,15 +78,19 @@
                 "-fsanitize=address",
                 "-fno-omit-frame-pointer",
                 "-fsanitize=undefined",
+                "@${fileDirname}/../conan-build/conanbuildinfo.args",
                 "-O",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/build/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "/usr/bin"
             },
             "problemMatcher": [
                 "$gcc"
+            ],
+            "dependsOn" :[
+                "Make output dir"
             ]
         },
         {
@@ -77,16 +98,19 @@
             "label": "Run",
             "command": "./${fileBasenameNoExtension}",
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}/build"
             },
-            "problemMatcher": []
+            "problemMatcher": [],
+            "dependsOn": [
+                "Build"
+            ]
         },
         {
             "type": "shell",
             "label": "Sanitize",
             "command": "./${fileBasenameNoExtension}",
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}/build"
             },
             "problemMatcher": [],
             "dependsOn": [
